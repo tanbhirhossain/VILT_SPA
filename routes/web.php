@@ -1,12 +1,8 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia('Index/Index');
-});
-
-Route::get('/check', function(){
-    return view('test');
-});
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/hello', [IndexController::class, 'show']);
